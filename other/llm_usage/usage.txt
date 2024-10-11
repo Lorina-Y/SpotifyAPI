@@ -1,9 +1,9 @@
-LLM: ChatGPT-4.
-Date: 2 January 2024
+LLM: ChatGPT-3.5.
+Date: 10 October 2024
 
 
 User
-give r code for compare dancibility
+give r code for compare danceability
 
 ChatGPT
 # Plot danceability over time
