@@ -7,7 +7,7 @@ author:
 thanks: "Code and data are available at: [https://github.com/Lorina-Y/SpotifyAPI.git]."
 date: today
 date-format: long
-abstract: "This paper tracing the transformation of Song Styles Across Generations of K-pop, focus on 3 representative girl group: Girls' Generation, Twice, and Aespa"
+abstract: "This paper tracing the transformation of Song Styles Across Generations of K-pop, focus on 3 representative girl group: Girls' Generation, Twice, and Aespa, and plan to examines three key musical characteristics: valence (emotional positivity), energy (intensity and activity), and danceability (suitability for dancing). Through this analysis, the study provides a comprehensive view of how K-pop girl group music has transformed over time, offering deeper insights into the genre's stylistic development."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -21,8 +21,6 @@ bibliography: references.bib
 library(tidyverse)
 library(spotifyr)
 library(ggplot2)
-library(lubridate)
-library(dplyr)
 
 
 twice <- readRDS("../data/01-raw_data/twice.rds")
@@ -33,24 +31,26 @@ girlsgeneration <- readRDS("../data/01-raw_data/girlsgeneration.rds")
 
 
 # Introduction
-This paper explores the key aspect of this evolution: changes in musical style.
-We aim to examine the change of K-pop girls’ band music by analyzing three musical characteristics: valence (emotional positivity), energy (intensity and activity) and danceability (how suitable a track is for dancing).
-Through these analyse, this study will offer a comprehensive view of how K-pop girl group music has evolved in music style, providing a deeper understanding of their genre's development.
+This paper explores the key aspect of this evolution: changes in musical style. We aim to examine the change of K-pop girls’ band music by analyzing three musical characteristics: valence (emotional positivity), energy (intensity and activity) and danceability (how suitable a track is for dancing).
+The analysis found a shift from upbeat to darker tones in valence, consistently high energy levels, and a growing emphasis on danceability, reflecting the genre's adaptability to industry trends. These findings offer insights of how K-pop girl group music has evolved in music style, providing a deeper understanding of their genre's development.
+The rest of the paper is organized as follows: Data section, Result section, Conclusion and appendix which present graph.
 
-# Data {#sec-data}
+
+# Data
 ## Overview
-This study utilizes data from the Spotify API through the spotifyr package [@spotifyr], which provides detailed audio features for songs by K-pop girl groups. The primary groups analyzed are Aespa, Girls’ generation and Twice, and analyzing and graphing data by using R code [@citeR] and ggplot[@gg2]
+This study utilizes data from the Spotify API [@spotify_api] through the spotifyr package [@spotifyr], which provides detailed audio features for songs by K-pop girl groups. We analyzing and graphing data by using R language [@citeR] and packages ggplot [@ggplot2] and tidyverse [@tidyverse].
  
 The origin dataset has 39 variables in total, and this paper only interested in the following 5 variables:artist name,album release date,valence as a measure of the musical positivenes, energy that indicates the intensity,and danceability that reflects how suitable a track is for dancing.
 Through this data, the study aims to analyze musical trends over time and assess the international influence of these K-pop girl groups.  
 
+# Result
 ## Change Trends in Audio Features:
 
-Looking at the valence plot(@fig-valence),From 2008 to 2010, there was a noticeable increase in valence for Girls' Generation, indicating a trend towards more positive and upbeat songs. However, after 2013, a decline in valence suggests a shift towards darker or more emotionally complex music. By 2023, Aespa's songs show a renewed rise in valence. This "rise, fall, rise" pattern over the past 20 years reflects an evolving approach to song styles.
+Looking at the valence plot (@fig-valence),From 2008 to 2010, there was a noticeable increase in valence for Girls' Generation, indicating a trend towards more positive and upbeat songs. However, after 2013, a decline in valence suggests a shift towards darker or more emotionally complex music. By 2023, Aespa's songs show a renewed rise in valence. This "rise, fall, rise" pattern over the past 20 years reflects an evolving approach to song styles.
 
-The plot(@fig-energy) shows that K-pop girl group songs consistently exhibit high energy,regardless of the release period. Girls' Generation consistently maintains high energy levels, indicating a preference for intense and dynamic tracks. Twice displays more variability, suggesting a mix of high-energy songs alongside more varied styles. In contrast, Aespa's songs show a slight reduction in energy, which could be attributed to stylistic choices rather than an overall shift in K-pop trends. Overall, the consistently high energy reflects a genre-wide emphasis on lively and impactful music, characteristic of K-pop girl group performances.
+The plot (@fig-energy) shows that K-pop girl group songs consistently exhibit high energy,regardless of the release period. Girls' Generation consistently maintains high energy levels, indicating a preference for intense and dynamic tracks. Twice displays more variability, suggesting a mix of high-energy songs alongside more varied styles. In contrast, Aespa's songs show a slight reduction in energy, which could be attributed to stylistic choices rather than an overall shift in K-pop trends. Overall, the consistently high energy reflects a genre-wide emphasis on lively and impactful music, characteristic of K-pop girl group performances.
 
-The danceability data(@fig-danceability) indicates a rising trend in K-pop girl group music from 2008 to 2024. Girls' Generation's songs exhibit lower danceability, while Twice and Aespa show higher levels, reflecting an increased emphasis on dance-oriented tracks in more recent years. This trend suggests K-pop girl groups have placed a greater focus on producing music that is more suitable for choreography and dance performances.
+The danceability plot (@fig-danceability) indicates a rising trend in K-pop girl group music from 2008 to 2024. Girls' Generation's songs exhibit lower danceability, while Twice and Aespa show higher levels, reflecting an increased emphasis on dance-oriented tracks in more recent years. This trend suggests K-pop girl groups have placed a greater focus on producing music that is more suitable for choreography and dance performances.
 
 # Conclusion:
 These trends suggest that while high energy remains a staple, newer groups emphasize danceability and varied emotional tones, adapting to changing industry trends and audience preferences.
@@ -59,7 +59,7 @@ These trends suggest that while high energy remains a staple, newer groups empha
 
 ```{r}
 #| label: fig-valence
-#| fig-cap: Compare the valence of song
+#| fig-cap: Trends in song valence over time for GirlsGeneration, Twice, and Aespa, showing the emotional positivity of tracks by album release date, with points representing individual songs and smooth curves highlighting overall trends.
 #| echo: false
 #| warning: false
 #| message: false
@@ -91,7 +91,7 @@ valence_plot
 
 ```{r}
 #| label: fig-energy
-#| fig-cap: Compare Energy of the song
+#| fig-cap: Trends in song energy over time for GirlsGeneration, Twice, and Aespa, with points representing individual songs and smooth curves showing overall energy patterns.
 #| echo: false
 #| warning: false
 #| message: false
@@ -116,7 +116,7 @@ energy_plot
 
 ```{r}
 #| label: fig-danceability
-#| fig-cap: Compare danceability of the song
+#| fig-cap: Trends in song danceability over time for GirlsGeneration, Twice, and Aespa, with points representing individual songs and smooth curves showing overall energy patterns.
 #| echo: false
 #| warning: false
 #| message: false
@@ -132,8 +132,7 @@ danceability_plot <- all_data |>
     title = "Danceability Over Time",
     x = "Album Release Date",
     y = "Danceability",
-    color = "Artist",
-    subtitle = "Comparison of Danceability Trends for Girls' Generation, Twice, and Aespa"
+    color = "Artist"
   ) +
   scale_color_brewer(palette = "Set1") +
   theme(legend.position = "bottom")
@@ -146,9 +145,5 @@ danceability_plot
 
 \newpage
 # References
-@citeR
-@spotifyr
-@rohan
-@gg2
-@tibble
+
 
