@@ -6,7 +6,7 @@ This paper compare song data about valence, energy and dancibility provide draw 
 
 ## File Structure
 The repo is structured as:
--   `data/raw_data` contains the raw data as obtained from X.
+-   `data/raw_data` contains the raw data as obtained from Spotify api.
 -   `other` contains details about LLM chat interactions, and sketches.
 -   `paper` contains the files used to generate the paper, including the Quarto document and reference bibliography file, as well as the PDF of the paper. 
 -   `scripts` contains the R scripts used to download data.
