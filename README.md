@@ -2,12 +2,12 @@
 
 
 ## Overview
-This paper compare song data about valence, energy and dancibility provide draw from Spotify. Aim to trace the change of Song Styles Across Generations of K-pop, focus on 3 representative girl group: Girls' Generation, Twice, and Aespa.
+This paper compares song data about valence, energy and dancibility provided from Spotify. Aim to trace the change of Song Styles Across Generations of K-pop, focus on 3 representative girl groups: Girls' Generation, Twice, and Aespa.
 
 ## File Structure
 The repo is structured as:
--   `data/raw_data` contains the raw data as obtained from Spotify api.
--   `other` contains details about LLM chat interactions, and sketches.
+-   `data/raw_data` contains the raw data as obtained from Spotify API (https://developer.spotify.com/documentation/web-api).
+-   `other` contains details about LLM chat interactions and sketches.
 -   `paper` contains the files used to generate the paper, including the Quarto document and reference bibliography file, as well as the PDF of the paper. 
 -   `scripts` contains the R scripts used to download data.
 
