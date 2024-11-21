@@ -32,8 +32,10 @@ girlsgeneration <- readRDS("../data/01-raw_data/girlsgeneration.rds")
 
 # Introduction
 This paper explores the key aspect of this evolution: changes in musical style. We aim to examine the change of K-pop girls’ band music by analyzing three musical characteristics: valence (emotional positivity), energy (intensity and activity) and danceability (how suitable a track is for dancing).
+
 The analysis found a shift from upbeat to darker tones in valence, consistently high energy levels, and a growing emphasis on danceability, reflecting the genre's adaptability to industry trends. These findings offer insights of how K-pop girl group music has evolved in music style, providing a deeper understanding of their genre's development.
-The rest of the paper is organized as follows: Data section, Result section, Conclusion and appendix which present graph.
+
+The rest of the paper is organized as follows: Data section, Conclusion and appendix which present graph.
 
 
 # Data
@@ -43,9 +45,7 @@ This study utilizes data from the Spotify API [@spotify_api] through the spotify
 The origin dataset has 39 variables in total, and this paper only interested in the following 5 variables:artist name,album release date,valence as a measure of the musical positivenes, energy that indicates the intensity,and danceability that reflects how suitable a track is for dancing.
 Through this data, the study aims to analyze musical trends over time and assess the international influence of these K-pop girl groups.  
 
-# Result
 ## Change Trends in Audio Features:
-
 Looking at the valence plot (@fig-valence),From 2008 to 2010, there was a noticeable increase in valence for Girls' Generation, indicating a trend towards more positive and upbeat songs. However, after 2013, a decline in valence suggests a shift towards darker or more emotionally complex music. By 2023, Aespa's songs show a renewed rise in valence. This "rise, fall, rise" pattern over the past 20 years reflects an evolving approach to song styles.
 
 The plot (@fig-energy) shows that K-pop girl group songs consistently exhibit high energy,regardless of the release period. Girls' Generation consistently maintains high energy levels, indicating a preference for intense and dynamic tracks. Twice displays more variability, suggesting a mix of high-energy songs alongside more varied styles. In contrast, Aespa's songs show a slight reduction in energy, which could be attributed to stylistic choices rather than an overall shift in K-pop trends. Overall, the consistently high energy reflects a genre-wide emphasis on lively and impactful music, characteristic of K-pop girl group performances.
